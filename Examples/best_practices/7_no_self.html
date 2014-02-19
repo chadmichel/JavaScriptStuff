@@ -1,0 +1,21 @@
+<html>
+<script>
+
+function Bat(name) {
+    this.name = name;
+
+    this.fly = function () {        
+        setTimeout(function() {
+            // error
+            alert(this.name + " fly'z away");
+        });
+    };
+}
+
+var bat = new Bat("bob");
+bat.fly();
+
+
+</script>
+
+</html>

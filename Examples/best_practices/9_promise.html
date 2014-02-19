@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="qunit-1.14.0.css"></link>
+  <script src="qunit-1.14.0.js"></script>
+  <script src="jquery-2.1.0.min.js"></script>
+
+</head>
+
+<body>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
+
+  	<script>
+
+      (function() {
+    		function FeatureApi() {
+	            var self = this;
+
+	            self.creatableTypes = function() {
+
+		            var promise = $.Deferred(),
+		                url = buildUrl("CreatableTypes");
+
+		            $.get(url, function (data) {
+		                promise.resolve(data);
+		            })
+		            .fail(function () {
+		                promise.reject();
+		            });
+
+		            return promise;
+
+	            }
+        	}
+
+        	return new FeatureApi();        
+      }());
+
+  	</script>
+
+</body>
+
+</html>

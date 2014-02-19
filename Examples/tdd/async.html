@@ -1,0 +1,54 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="qunit-1.14.0.css"></link>
+  <script src="qunit-1.14.0.js"></script>
+  <script src="jquery-2.1.0.min.js"></script>
+
+</head>
+
+<body>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
+
+  	<script>
+
+      var featureApi = (function() {
+    		function FeatureApi() {
+            var self = this;
+
+            self.creatableTypes = function() {
+                var promise = $.Deferred();
+
+                // fake out call for demo
+                setTimeout(function() {                
+                    promise.resolve([
+                        {id: 1050, name: "WasteWater Pipe"},
+                        {id: 1051, name: "WasteWater Manhole"}
+                      ]);
+                });
+
+                return promise;
+            }
+        }
+
+        return new FeatureApi();        
+      }());
+      
+      asyncTest("Feature API - Creatable Types", function () {
+          expect(1);
+
+          featureApi.creatableTypes()
+              .then(function (result) {
+                  ok(result != null);
+                  start();
+              });
+      });
+
+
+  	</script>
+
+</body>
+
+</html>

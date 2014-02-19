@@ -1,0 +1,22 @@
+<html>
+<script>
+
+function Bat(name) {
+	var self = this; // something that is used
+    self.name = name;
+
+    self.fly = function () {        
+        setTimeout(function() {
+            // error
+            alert(self.name + " fly'z away");
+        });
+    };
+}
+
+var bat = new Bat("bob");
+bat.fly();
+
+
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" href="qunit-1.14.0.css"></link>
+	<script src="qunit-1.14.0.js"></script>
+
+</head>
+
+<body>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
+
+  	<script>
+
+  		function UserProfile() {
+  			var self = this;
+  			self.email = "";
+
+  			self.setEmail = function(email) {
+  				self.email = email;
+  			};
+  			self.getEmail = function() {
+  				return self.email;
+  			};
+  		}
+
+  		test("super simple test", function() {
+
+  			var profile = new UserProfile();
+  			profile.setEmail("c@test.com");
+  			ok("c@test.com" === profile.getEmail());
+  			
+  		});
+
+  	</script>
+
+</body>
+
+</html>

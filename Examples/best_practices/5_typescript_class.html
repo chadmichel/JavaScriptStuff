@@ -1,0 +1,32 @@
+<html>
+<script>
+
+// this pattern has some advantages
+// 1. functions are not created for each new class. This saves memory.
+// 2. gives us the ability to have public and private members. (other patterns have this too).
+
+// As a con this pattern seems somewhat odd. adding methods occurs outside the Car function.
+
+var Car = (function() {
+ 
+    function Car(engine) {
+        this.engine = engine;
+    } 
+    
+    Car.prototype.start = function() {
+        alert('start engine ' + this.engine);
+    };
+     
+    Car.prototype.stop = function () {
+        alert('stop engine ' + this.engine);
+    };             
+ 
+    return Car;
+}());
+ 
+var car = new Car('V8');
+car.start();
+car.stop();
+
+</script>
+</html>
