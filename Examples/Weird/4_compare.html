@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<style>
+	.chk {
+	 	position: absolute;
+	 	left: 150px;
+
+	}
+</style>
+
+<div>Odd conversion</div>
+<div>"10" == 10  <input id="t1" disabled class="chk" type="checkbox" /></div>
+<div>"10" === 10 <input id="t2" disabled class="chk" type="checkbox" /></div>
+<div>"010" === 10 <input id="t3" disabled class="chk" type="checkbox" /></div>
+
+<hr />
+<div>add</div>
+<div>"10" + 10  <input id="t4" class="chk" type="text" /></div>
+<div> 10 + "10"  <input id="t5" class="chk" type="text" /></div>
+
+
+<script>
+
+	var x = "10";
+
+	window.t1.checked = (x == 10);
+	window.t2.checked = (x === 10);
+	window.t3.checked = ("010" == 10);
+
+	window.t4.value = "10" + 10;
+	window.t5.value = 10 + "10";
+
+</script>
+
+</body>
+</html>
